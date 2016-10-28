@@ -1,0 +1,93 @@
+$aws-color: #F58535;
+
+body {
+  width: 400px;
+}
+
+a {
+  text-decoration: none;
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+}
+select, input {
+  outline: none;
+  border: 1px solid #EFEFEF;
+  background-color: #FFF;
+  padding: 0.8em;
+  border-radius: 0.2em;
+
+  &:focus {
+    box-shadow : 0 0 0 1px $aws-color inset;
+  }
+}
+
+.control {
+  overflow: hidden;
+
+  .region-select, .query-input {
+    float: left;
+    box-sizing: border-box;
+  }
+  .region-select {
+    width: 160px;
+    select {
+      border-left-width: 0px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      box-sizing: border-box;
+      width: 100%;
+    }
+  }
+  .query-input {
+    width: calc(100% - 160px);
+    input {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      box-sizing: border-box;
+      width: 100%;
+    }
+  }
+}
+
+.list {
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: block;
+  padding: 5px;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  cursor: pointer;
+
+  .selected &, &:hover, &:focus {
+    outline: none;
+    background-color: lighten($aws-color, 33);
+  }
+
+  .title {
+    vertical-align: bottom;
+  }
+
+  .icon {
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  .title {
+    font-size: small;
+    color: #444;
+  }
+
+  .url {
+    font-size: x-small;
+    color: #888;
+  }
+}
