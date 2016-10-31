@@ -4,8 +4,10 @@
   "description": "Chrome aws anything",
   "main": "gulpfile.babel.js",
   "scripts": {
-    "build": "gulp build",
-    "watch": "gulp watch"
+    "build": "npm run build:clean && gulp build",
+    "watch": "gulp watch",
+    "release": "npm run build && zip -r build.zip build",
+    "build:clean": "ls build 2> /dev/null 1>&2 && rm -rf build/*"
   },
   "dependencies": {
     "react": "^0.14.6",
