@@ -2,16 +2,16 @@ import React from 'react'
 const T = React.PropTypes
 
 export default class Input extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {input: ""};
+  constructor (props) {
+    super(props)
+    this.state = {input: ''}
   }
-  handleChange(e) {
-    var v = e.target.value;
-    this.setState({input: v});
-    this.props.onChange(v);
+  handleChange (e) {
+    var v = e.target.value
+    this.setState({input: v})
+    this.props.onChange(v)
   }
-  render() {
+  render () {
     return (
       <div>
         <input
@@ -24,7 +24,7 @@ export default class Input extends React.Component {
           autoFocus={this.props.autoFocus}
         />
       </div>
-    );
+    )
   }
 }
 
@@ -33,4 +33,4 @@ Input.propTypes = {
   onKeyUp: T.func.isRequired,
   onKeyDown: T.func.isRequired,
   autoFocus: T.bool
-};
+}
